@@ -1,6 +1,7 @@
-# Dapp Development Tutorial 1: Asch Dapp Hello World
+title: 'Dapp Development Tutorial 1: Asch Dapp Hello World'
+---
 
-## 1 Basic Process
+# 1 Basic Process
 
 There are three types of net in Asch system, localnet, testnet, and mainnet. The later two, testnet and mainnet, are usually deployed online, which can be accessed by public network. Meanwhile the first type, localnet, as its name is running on local machine, which is actually a private chain with only one node. Localnet is designed to help developing and testing locally.
 
@@ -10,7 +11,7 @@ And the development of Dapp involves all of these types of network simultaneousl
 - step 3: deploying officially on mainnet
 
 
-## 2 Start localnet
+# 2 Start localnet
 
 You, as a Dapp developer, can run your own localnet after downloading [asch source code](https://github.com/sqfasd/asch).
 
@@ -19,15 +20,15 @@ git clone https://github.com/sqfasd/asch
 ```
 Then you can install and operate the environment following the instructions in README file.
 
-## 3 Install asch-cli
+# 3 Install asch-cli
 
 ```
-npm install -g asch-cli
+npm instal -g asch-cli
 ```
 
-NOTE: DO NOT use ```cnpm``` from TAOBAO since there are some **bugs** in it.
+NOTE: DO NOT use `cnpm` from TAOBAO since there are some **bugs** in it.
 
-## 4 Create an application in local
+# 4 Create an application in local
 
 First enter your Asch source code folder, and make sure the localnet is running.
 
@@ -36,7 +37,7 @@ cd <asch source code dir>
 node app.js
 ```
 
-Then use ```dapps``` command of ```asch-cli``` to create an application:
+Then use `dapps` command of `asch-cli` to create an application:
 
 ```
 asch-cli dapps -a
@@ -93,7 +94,7 @@ Done (DApp id is 6299140990391157236)
 # Then the program can automatically register this DApp on localnet. In this case, our application ID is 6299140990391157236
 ```
 
-## 5 The folder structure
+# 5 The folder structure
 
 Now we can see that there is a new folder added under `dapps`, named as the DApp ID just created.
 
@@ -115,9 +116,9 @@ package.json            #
 public                  # this folders contains all front-end files
 routes.json             # this file contains the configuration of http route. If you want to add new interface, you need to revise this file.
 ```
-Don't worry about the complexity of the file structure, for the time being just having a first look is enough. 
+Don't worry about the complexity of the file structure, just have a general idea of it.
 
-All the esential files related to developers can be found in ```modules/contracts/```
+All the esential files related to developers can be found in `modules/contracts/`
 
 There are already 4 types of built-in contacts in this folder:
 
@@ -132,11 +133,11 @@ withdrawaltransfer.js   # XAS withdraw contract
 
 What developers need to do is to create new contact to run your business logic. That's all. It is no need to understand any other codes.
 
-## 6 Set DApp's genesis password
+# 6 Set DApp's genesis password
 
-It is necessary to set the primary password that we used before in genesis block, as well as corresponding DApp ID, in ```dapp``` field of ```config.json```.
+It is necessary to set the primary password that we used before in genesis block, as well as corresponding DApp ID, in `dapp` field of `config.json`.
 
-In the future when DApp is published in real network, it still needs a machine used to configure the primary password. NOTE: only one machine is required.
+In the future when DApp is published in real network, it still needs a machine configuring the primary password. NOTE: only one machine is required.
 
 ```
 "params": {
@@ -146,12 +147,12 @@ In the future when DApp is published in real network, it still needs a machine u
 }
 ```
 
-## 7 Access the front end interface
+# 7 Access the front end interface
 
 Let's take a rest to experience the fundamental functions of sidechain via the front end of DApp.
 
 You can find the DApp entry in installed applications list of wallet UI.
-Or directly access the DApp URL: ```localhost:4096/dapps/<dapp id>```
+Or directly access the DApp URL: `localhost:4096/dapps/<dapp id>`
 
 In this project, we can conduct multiple tasks such as deposit, in-chain transfer, and withdraw.
 
